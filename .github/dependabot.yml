@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    allow:
+      - dependency-name: "mcr.microsoft.com/dotnet/aspnet"
+      - dependency-name: "mcr.microsoft.com/dotnet/sdk"
+    ignore:
+      - dependency-name: "mcr.microsoft.com/dotnet/aspnet"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+      - dependency-name: "mcr.microsoft.com/dotnet/sdk"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
